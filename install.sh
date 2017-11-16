@@ -13,9 +13,9 @@ install_module(){
   fi
 
   # Link all symlinks
-  for link_target in $(find $MODULE_FOLDER -name '*.symlink'); do
+  for link_target in $(cd $MODULE_FOLDER && find . -name '*.symlink' | cut -d / -f2-); do
     LINK="${link_target%.*}"
-    ln -s $link_target $LINK 
+    ln -s "$MODULE_FOLDER/$link_target" ~/$LINK 
   done
 
 }
