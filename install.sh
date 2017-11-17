@@ -14,10 +14,17 @@ install_module(){
 
   # Link all symlinks
   for link_target in $(cd $MODULE_FOLDER && find . -name '*.symlink' | cut -d / -f2-); do
-    LINK="${link_target%.*}"
-    ln -s "$MODULE_FOLDER/$link_target" ~/$LINK 
+    LINK=~/${link_target%.*}
+    rm -f $LINK
+    ln -s "$MODULE_FOLDER/$link_target" $LINK 
   done
 
+  # Link autostart .desktop files
+  for link_target in $(cd $MODULE_FOLDER && find -name '*.autostart' | cut -d / -f2-); do
+    LINK=~/.config/autostart/${link_target%.*}
+    rm -f $LINK
+    ln -s $MODULE_FOLDER/$link_target $LINK
+  done
 }
 
 for entry in $(ls $DOTFILES_FOLDER); do
@@ -25,3 +32,4 @@ for entry in $(ls $DOTFILES_FOLDER); do
     install_module $entry
   fi
 done
+
