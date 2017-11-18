@@ -9,7 +9,7 @@ Feel free to take whatever you want =)
 
 ## Usage
 
-The repository should be cloned in the `~/.dotfiles` directory. Once clone all configuration can be applied by running `~/.dotfiles/install.sh`
+The repository should be cloned in the `~/.dotfiles` directory. Once cloned all configuration can be applied by running `~/.dotfiles/install.sh`
 
 ## Modules
 Each folder in this repo is a module. When the global `install.sh` is run the following happens for each module:
