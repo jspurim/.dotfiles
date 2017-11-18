@@ -12,7 +12,7 @@ Feel free to take whatever you want =)
 The repository should be cloned in the `~/.dotfiles` directory. Once clone all configuration can be applied by running `~/.dotfiles/install.sh`
 
 ## Modules
-Each folder in this repo is a module. When the global `install.sh` the following happens for each module:
+Each folder in this repo is a module. When the global `install.sh` is run the following happens for each module:
 
 1. The module's `install.sh` script is run. Programs, libraries and plugins can be `apt-get`ed here.
 2. All files ending in `.symlink` within the module are simlinked from the home folder. The `.symlink` extension is removed in the link. For example a file `.bar.symlink` in module `foo` will be linked from `~/.bar`
