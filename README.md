@@ -1,4 +1,4 @@
-#My dotfiles
+# My dotfiles
 
 **WARNING:** No configuration is backed up by the scripts in this repository. Use at your own risk. 
 
