@@ -91,6 +91,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if [ -f ~/.environment ]; then
+  . ~/.environment
+fi
+
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

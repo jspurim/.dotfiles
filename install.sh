@@ -2,6 +2,10 @@
 
 DOTFILES_FOLDER=~/.dotfiles
 
+# Clear environment variables
+rm -f ~/.environment
+touch ~/.environment
+
 install_module(){
   MODULE_NAME=$1
   MODULE_FOLDER="$DOTFILES_FOLDER/$MODULE_NAME"
@@ -25,6 +29,11 @@ install_module(){
     rm -f $LINK
     ln -s $MODULE_FOLDER/$link_target $LINK
   done
+
+  # Add environment variables
+  if [ -f $MODULE_FOLDER/env ]; then
+    cat $MODULE_FOLDER/env >> ~/.environment
+  fi
 }
 
 for entry in $(ls $DOTFILES_FOLDER); do
