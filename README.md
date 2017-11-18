@@ -16,7 +16,7 @@ Each folder in this repo is a module. When the global `install.sh` is run the fo
 
 1. The module's `install.sh` script is run. Programs, libraries and plugins can be `apt-get`ed here.
 2. All files ending in `.symlink` within the module are simlinked from the home folder. The `.symlink` extension is removed in the link. For example a file `.bar.symlink` in module `foo` will be linked from `~/.bar`
-3. All files ending in `.autostarta` within the module are symlinked (without the `.autostart` suffix) from the `~/.config/autostart` folder. This is used to add `.desktop` files to that folder which cause applications to run on startup.
+3. All files ending in `.autostart` within the module are symlinked (without the `.autostart` suffix) from the `~/.config/autostart` folder. This is used to add `.desktop` files to that folder which cause applications to run on startup.
 4. The contents of the module's `env` file (if it exists) are appended to `.environment` file, which can then be sourced by the initialization file of the shell.
 
 ## TODOS
