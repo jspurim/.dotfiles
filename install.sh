@@ -19,7 +19,7 @@ install_module(){
   # Link all symlinks
   for link_target in $(cd $MODULE_FOLDER && find . -name '*.symlink' | cut -d / -f2-); do
     LINK=~/${link_target%.*}
-    rm -f $LINK
+    rm -rf $LINK
     ln -s "$MODULE_FOLDER/$link_target" $LINK 
   done
 
