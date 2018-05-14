@@ -25,4 +25,4 @@ The following things you may expect from a more developed dotfiles system are no
 
 * Backing up old configuration
 * Selectively installing modules
-* Skipping unecessary steps
+* Skipping unnecessary steps
